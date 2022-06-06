@@ -6,19 +6,32 @@
     <!--add and search toolbar-->
     <div class="toolbar">
       <div class="add-employee">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-success btn-lg">Add Employee</button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" #addEmButton
+                class="btn btn-outline-success btn-lg">Add Employee
+        </button>
       </div>
       <div class="search-employees">
-        <input type="search" class="form-control" placeholder="">
+        <input type="search" class="form-control" placeholder="" #searchInput
+        (input)="searchValue(searchInput.value)"
+        >
       </div>
     </div>
     <!--Area to display all the employees-->
-    <div class="employees p-3">
-      <div class="row mt-5">
+    <div class="employees black-border">
+      <div class="employees p-3" *ngIf="employees.length == 0">
         <div class="col text-center">
           <span class="text-secondary fs-2 fw-bold fst-italic">There are No Employees Added!</span>
         </div>
       </div>
+
+        <div class="row mt-5" *ngFor="let employee of employeeToDisplay;let ei = index">
+          <div class="col">
+            <app-employee [employee]="employee"  (onRemove)="removeEm($event)"
+            (onEdit)="editEmployee($event)"
+            ></app-employee>
+          </div>
+        </div>
+
 
     </div>
   </main>
@@ -64,12 +77,14 @@
                 <div class="col">
                   <!--Male radio button-->
                   <div class="form-check form-check-inline">
-                    <input type="radio" formControlName="gender" class="form-check-input" name="gender" id="male" value="m">
+                    <input type="radio" formControlName="gender" class="form-check-input" name="gender" id="male"
+                           value="m">
                     <label for="male" class="form-check-label">Male</label>
                   </div>
                   <!--Female radio button-->
                   <div class="form-check form-check-inline">
-                    <input type="radio" formControlName="gender" class="form-check-input" name="gender" id="female" value="f">
+                    <input type="radio" formControlName="gender" class="form-check-input" name="gender" id="female"
+                           value="f">
                     <label for="female" class="form-check-label">Female</label>
                   </div>
                 </div>
@@ -94,7 +109,7 @@
             <div class="col">
               <label for="prof" class="form-label">Profile Image</label>
               <input type="file" id="prof" class="form-control"
-              #fileInput
+                     #fileInput
               >
             </div>
           </div>
@@ -111,7 +126,8 @@
           </div>
           <div class="row mt-3">
             <div class="col">
-              <input type="number" class="form-control" formControlName="jobExperience" placeholder="Job Experience (yrs)">
+              <input type="number" class="form-control" formControlName="jobExperience"
+                     placeholder="Job Experience (yrs)">
             </div>
             <div class="col">
               <input type="number" formControlName="salary" class="form-control" placeholder="Salary (LPA)">
@@ -120,7 +136,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Insert</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addEmployee()">Insert</button>
       </div>
     </div>
   </div>

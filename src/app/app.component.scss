@@ -29,6 +29,13 @@ main{
   border-radius: 1rem;
   font-size: 1.3rem;
 }
+app-employee {
+  display: block;
+  width: 75%;
+  margin: 0px auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px rgba(34,34,34,0.5);
+}
 .form-heading{
   border-top: 1px solid black;
 }

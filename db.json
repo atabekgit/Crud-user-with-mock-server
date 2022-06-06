@@ -1,14 +1,29 @@
 {
   "posts": [
-
-  ],
-  "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "firstName": "vbcxv",
+      "lastName": "vxxzxz",
+      "birthday": "2022-06-02",
+      "gender": "f",
+      "education": "10th pass",
+      "company": "xSx",
+      "jobExperience": 3.2345455555555554e+22,
+      "salary": 322,
+      "id": 1
+    },
+    {
+      "firstName": "ser",
+      "lastName": "dfd",
+      "birthday": "2022-06-01",
+      "gender": "m",
+      "company": "sas",
+      "jobExperience": 323,
+      "salary": 3223,
+      "profile": "iphone.jpg",
+      "id": 2
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

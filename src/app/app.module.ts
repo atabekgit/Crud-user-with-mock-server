@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

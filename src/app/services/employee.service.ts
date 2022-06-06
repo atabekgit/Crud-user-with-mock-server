@@ -11,16 +11,17 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
+
   getEmployees() {
     return this.http.get<Employee[]>(`${environment.baseUrl}`);
   }
 
   postEmployees(employee: Employee) {
-    return this.http.post<Employee[]>(`${environment.baseUrl}`, employee);
+    return this.http.post<Employee>(`${environment.baseUrl}`, employee);
   }
 
-  deleteEmployees(id: string) {
-    return this.http.delete(`${environment.baseUrl} +'/'` + id);
+  deleteEmployees(id: any) {
+    return this.http.delete(`${environment.baseUrl}/${id}`);
   }
 
 }
